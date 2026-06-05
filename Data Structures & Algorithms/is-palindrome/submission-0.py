@@ -1,0 +1,22 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        
+        i = 0
+        j = len(s)-1
+
+        while i < (len(s)/2):
+            if s[i].isalnum() and s[j].isalnum():
+                if s[i].casefold() != s[j].casefold():
+                    return False
+                else:
+                    i+=1
+                    j-=1    
+            elif s[i].isalnum():
+                j-=1
+            elif s[j].isalnum():
+                i+=1     
+            else:
+                i+=1
+                j-=1    
+
+        return True           
